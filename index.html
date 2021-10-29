@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" 
+    crossorigin="anonymous"
+  >
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://kit.fontawesome.com/25403743aa.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css">
+  <title>Weather App</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card card-weather-app">
+      <div class="card-body">
+        <form id="search-city-form">
+          <div class="row">
+            <div class="mb-3 col-6">
+              <input type="text" placeholder="Search city" class="form-control search-box-city" id="search-city-input">
+            </div>
+            <div class="col-3">
+              <button type="submit" class="search-button">Search</button>
+            </div>
+            <div class="col-3">
+              <button type="submit" id="current-location-button">Current Location</button>
+            </div>
+          </div>
+        </form>
+        <br />
+          <div class="card card-today">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6 col-today" id="city-element">
+                  Porto, Portugal
+                </div>
+                <div class="col-6 col-today" id="current-time">
+                  Wednesday | 22:40
+                </div>
+                <div class="col-6">
+                  <img src="images/storm.svg" alt="storm icon" class="img-today">
+                </div>
+                <span class="col today-temperature">
+                  <span id="today-temperature">
+                    16
+                  </span>
+                  <span class="temperature-units">
+                    <a href="#" id="celsius-link">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a>
+                  </span>
+                <span>
+                  <p>
+                    <ul class="today-weather-detail">
+                      <li id ="temperature-interval">Thunder</li>
+                      <li id="weather-description">Light showers</li>
+                      <li id="wind-speed">SW Wind 10km/h</li>
+                    </ul>
+                  </p>
+                </span>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col col-next-days">
+              Thursday
+              <br />
+              <img src="images/storm.svg" alt="storm icon" class="img-next-days">
+              <br />
+              15ºC | 24ºC
+            </div>
+            <div class="col col-next-days">
+              Friday
+              <br />
+              <img src="images/storm.svg" alt="storm icon" class="img-next-days">
+              <br />
+              15ºC | 22ºC
+            </div>
+            <div class="col col-next-days">
+              Saturday
+              <br />
+              <img src="images/rain.svg" alt="icon cloud with rain" class="img-next-days">
+              <br />
+              15ºC | 20ºC
+            </div>
+            <div class="col col-next-days">
+              Sunday
+              <br />
+              <img src="images/rain.svg" alt="icon cloud with rain" class="img-next-days">
+              <br />
+              15ºC | 20ºC
+            </div>
+            <div class="col col-next-days">
+              Monday
+              <br />
+              <img src="images/cloudy.svg" alt="icon sun covered by clouds" class="img-next-days">
+              <br />
+              12ºC | 21ºC
+            </div>
+            <div class="col col-next-days">
+              Tuesday
+              <br />
+              <img src="images/cloudy.svg" alt="icon sun covered by clouds" class="img-next-days">
+              <br />
+              13ºC | 21ºC
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <a href="">Open-source code</a> by Renata Dias
+  </div>
+  <footer>
+    <div>
+      Icons made by 
+      <a href="https://www.freepik.com" title="Freepik">
+        Freepik
+      </a> 
+      from
+      <a href="https://www.flaticon.com/" title="Flaticon">
+        www.flaticon.com
+      </a>
+    </div>
+  </footer>
+  <script src="src/script.js"></script>
+</body>
+</html>

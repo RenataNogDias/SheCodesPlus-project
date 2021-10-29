@@ -1,0 +1,90 @@
+body {
+  color: #59657a;
+  font-family: "Nunito", sans-serif;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  font-size: 10px;
+}
+
+.card-weather-app {
+  margin-top: 20px;
+  border-color: #42a5f5;
+}
+
+.search-box-city {
+  border-color: #42a5f5;
+  display: inline-block;
+}
+
+.search-button {
+  background-color: #eaf7fd;
+  border-radius: 5px;
+  border-color: #42a5f5;
+  color: #59657a;
+  display: inline-block;
+  padding: 6px;
+  width: 140px;
+  font-size: 15px;
+}
+
+#current-location-button {
+  background-color: #207cca;
+  border-radius: 5px;
+  border-color: #2a6da3;
+  color: #fff;
+  display: inline-block;
+  padding: 6px;
+  width: 140px;
+  font-size: 15px;
+}
+
+.card-today {
+  background-color: #eaf7fd;
+  border-color: #9ad7f6;
+  margin: 5px;
+}
+
+.col-today {
+  text-align: left;
+  font-size: 30px;
+}
+
+.img-today {
+  width: 250px;
+}
+
+.today-temperature {
+  font-size: 90px;
+  font-weight: 600;
+}
+
+.temperature-units {
+  font-size: 60px;
+}
+
+.today-weather-detail {
+  list-style-type: none;
+  font-size: 15px;
+}
+
+.col-next-days {
+  text-align: center;
+}
+
+.img-next-days {
+  width: 70px;
+  margin: 5px;
+}
+
+.temperature-units a {
+  text-decoration: none;
+  color: #207cca;
+}
+
+.temperature-units a:hover {
+  text-decoration: underline;
+  color: #1961a0;
+}
