@@ -3,6 +3,11 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: #207cca;
+}
+
 footer {
   position: fixed;
   bottom: 0;
@@ -77,6 +82,10 @@ footer {
 .img-next-days {
   width: 70px;
   margin: 5px;
+}
+
+.open-source-link {
+  text-align: center;
 }
 
 .temperature-units a {
