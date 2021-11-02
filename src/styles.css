@@ -15,10 +15,10 @@ footer {
 }
 
 .card-weather-app {
-  margin: 20px auto;
   padding: 5px;
   border-color: #42a5f5;
   max-width: 800px;
+  margin: 20px auto;
 }
 
 .search-box-city {
@@ -61,6 +61,7 @@ footer {
 
 .img-today {
   width: 200px;
+  margin-left: 30px;
 }
 
 .today-temperature {
