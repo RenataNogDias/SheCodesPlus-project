@@ -83,8 +83,9 @@ function changeToCelsius(event) {
 
 function changeToFahrenheit(event) {
   event.preventDefault();
+  let fahrenheitTemperature = (14 * 9) / 5 + 32;
   let todayTemperature = document.querySelector("#today-temperature");
-  todayTemperature.innerHTML = 61;
+  todayTemperature.innerHTML = fahrenheitTemperature;
 }
 
 function showPosition(position) {
@@ -110,7 +111,7 @@ dateElement.innerHTML = formatTime(currentTime);
 let searchedCityForm = document.querySelector("#search-city-form");
 searchedCityForm.addEventListener("submit", handleSubmit);
 
-searchCity("Porto");
+search("Porto");
 
 let celsiusLink = document.querySelector("#celsius-link");
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
