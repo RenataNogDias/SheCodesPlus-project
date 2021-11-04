@@ -58,19 +58,20 @@ function showTemperature(response) {
   iconElement.setAttribute("alt", iconDescription);
 }
 
-function searchCity(event) {
-  event.preventDefault();
-
-  let searchedCity = document.querySelector("#search-city-input");
-  let city = document.querySelector("#city-element");
-
-  city.innerHTML = searchedCity.value;
-
+function search(city) {
   let apiKey = "73a00877081bd43422bdee0f3022beb5";
   let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity.value}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchedCity = document.querySelector("#search-city-input");
+  search(searchedCity.value);
+  let cityElement = document.querySelector("#city-element");
+  cityElement.innerHTML = searchedCity.value;
 }
 
 function changeToCelsius(event) {
@@ -107,7 +108,9 @@ let currentTime = new Date();
 dateElement.innerHTML = formatTime(currentTime);
 
 let searchedCityForm = document.querySelector("#search-city-form");
-searchedCityForm.addEventListener("submit", searchCity);
+searchedCityForm.addEventListener("submit", handleSubmit);
+
+searchCity("Porto");
 
 let celsiusLink = document.querySelector("#celsius-link");
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
