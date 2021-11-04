@@ -37,7 +37,7 @@ function showTemperature(response) {
   let minTemperatureElement = Math.round(response.data.main.temp_min);
   let maxTemperatureElement = Math.round(response.data.main.temp_max);
   let weatherDescriptionElement = response.data.weather[0].description;
-  let windSpeedElement = response.data.wind.speed;
+  let windSpeedElement = Math.round(response.data.wind.speed);
   let iconElement = document.querySelector("#today-weather-icon");
 
   let temperatureInterval = document.querySelector("#temperature-interval");
