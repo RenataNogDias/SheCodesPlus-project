@@ -108,3 +108,14 @@ footer {
   text-decoration: underline;
   color: #1961a0;
 }
+
+.temperature-units .active {
+  text-decoration: none;
+  color: #59657a;
+  cursor: default;
+}
+
+.temperature-units .active:hover {
+  text-decoration: none;
+  color: #59657a;
+}
