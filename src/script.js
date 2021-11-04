@@ -29,8 +29,8 @@ function formatTime(time) {
 
 function showTemperature(response) {
   console.log(response);
-  let temperatureElement = response.data.main.temp;
-  let currentTemperature = Math.round(temperatureElement);
+  celsiusTemperature = response.data.main.temp;
+  let currentTemperature = Math.round(celsiusTemperature);
   let temperature = document.querySelector("#today-temperature");
   temperature.innerHTML = currentTemperature;
 
@@ -77,13 +77,12 @@ function handleSubmit(event) {
 function changeToCelsius(event) {
   event.preventDefault();
   let todayTemperature = document.querySelector("#today-temperature");
-  console.log(`Today's temperature is ${todayTemperature}`);
-  todayTemperature.innerHTML = 16;
+  todayTemperature.innerHTML = Math.round(celsiusTemperature);
 }
 
 function changeToFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (14 * 9) / 5 + 32;
+  let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
   let todayTemperature = document.querySelector("#today-temperature");
   todayTemperature.innerHTML = fahrenheitTemperature;
 }
@@ -111,12 +110,15 @@ dateElement.innerHTML = formatTime(currentTime);
 let searchedCityForm = document.querySelector("#search-city-form");
 searchedCityForm.addEventListener("submit", handleSubmit);
 
-search("Porto");
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", changeToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
 celsiusLink.addEventListener("click", changeToCelsius);
-fahrenheitLink.addEventListener("click", changeToFahrenheit);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentPosition);
+
+search("Porto");
