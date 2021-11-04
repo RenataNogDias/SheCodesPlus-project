@@ -36,8 +36,9 @@ function showTemperature(response) {
 
   let minTemperatureElement = Math.round(response.data.main.temp_min);
   let maxTemperatureElement = Math.round(response.data.main.temp_max);
-  let weatherDescriptionElement = response.data.weather[0].main;
+  let weatherDescriptionElement = response.data.weather[0].description;
   let windSpeedElement = response.data.wind.speed;
+  let iconElement = document.querySelector("#today-weather-icon");
 
   let temperatureInterval = document.querySelector("#temperature-interval");
   temperatureInterval.innerHTML = `${minTemperatureElement}°C | ${maxTemperatureElement}°C`;
@@ -47,6 +48,14 @@ function showTemperature(response) {
 
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = `Wind speed: ${windSpeedElement} km/h`;
+
+  let iconImage = response.data.weather[0].icon;
+  let iconDescription = response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${iconImage}@2x.png`
+  );
+  iconElement.setAttribute("alt", iconDescription);
 }
 
 function searchCity(event) {
