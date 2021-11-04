@@ -76,6 +76,8 @@ function handleSubmit(event) {
 
 function changeToCelsius(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let todayTemperature = document.querySelector("#today-temperature");
   todayTemperature.innerHTML = Math.round(celsiusTemperature);
 }
@@ -83,6 +85,8 @@ function changeToCelsius(event) {
 function changeToFahrenheit(event) {
   event.preventDefault();
   let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let todayTemperature = document.querySelector("#today-temperature");
   todayTemperature.innerHTML = fahrenheitTemperature;
 }
