@@ -27,6 +27,43 @@ function formatTime(time) {
   return formattedTime;
 }
 
+function showForecast() {
+  let forecast = document.querySelector("#weather-forecast");
+
+  let days = [
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+    "Monday",
+  ];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+        ${day}
+        <br />
+        <img src="images/storm.svg" alt="storm icon" class="img-forecast">
+        <br />
+          <span class="weather-forecast-temperature-min">
+            15ºC
+          </span> 
+          | 
+          <span class="weather-forecast-temperature-max">
+            24ºC
+          </span> 
+      </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecast.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   let currentTemperature = Math.round(celsiusTemperature);
@@ -117,6 +154,8 @@ let searchedCityForm = document.querySelector("#search-city-form");
 searchedCityForm.addEventListener("submit", handleSubmit);
 
 let celsiusTemperature = null;
+
+showForecast();
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", changeToFahrenheit);
