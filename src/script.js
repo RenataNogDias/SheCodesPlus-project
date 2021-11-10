@@ -89,25 +89,26 @@ function getForecast(coordinates) {
 }
 
 function showTemperature(response) {
-  celsiusTemperature = response.data.main.temp;
-  let currentTemperature = Math.round(celsiusTemperature);
-  let temperature = document.querySelector("#today-temperature");
-  temperature.innerHTML = currentTemperature;
+  let currentTemperature = Math.round(response.data.main.temp);
+  let temperatureElement = document.querySelector("#today-temperature");
+  temperatureElement.innerHTML = currentTemperature;
 
-  let minTemperatureElement = Math.round(response.data.main.temp_min);
-  let maxTemperatureElement = Math.round(response.data.main.temp_max);
-  let weatherDescriptionElement = response.data.weather[0].description;
-  let windSpeedElement = Math.round(response.data.wind.speed);
+  let minTemperature = Math.round(response.data.main.temp_min);
+  let maxTemperature = Math.round(response.data.main.temp_max);
+  let weatherDescription = response.data.weather[0].description;
+  let windSpeed = Math.round(response.data.wind.speed);
   let iconElement = document.querySelector("#today-weather-icon");
 
   let temperatureInterval = document.querySelector("#temperature-interval");
-  temperatureInterval.innerHTML = `${minTemperatureElement}°C | ${maxTemperatureElement}°C`;
+  temperatureInterval.innerHTML = `${minTemperature}°C | ${maxTemperature}°C`;
 
-  let weatherDescription = document.querySelector("#weather-description");
-  weatherDescription.innerHTML = weatherDescriptionElement;
+  let weatherDescriptionElement = document.querySelector(
+    "#weather-description"
+  );
+  weatherDescriptionElement.innerHTML = weatherDescription;
 
-  let windSpeed = document.querySelector("#wind-speed");
-  windSpeed.innerHTML = `Wind speed: ${windSpeedElement} km/h`;
+  let windSpeedElement = document.querySelector("#wind-speed");
+  windSpeedElement.innerHTML = `Wind speed: ${windSpeed} km/h`;
 
   let iconImage = response.data.weather[0].icon;
   let iconDescription = response.data.weather[0].description;
